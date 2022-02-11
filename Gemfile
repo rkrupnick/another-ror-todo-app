@@ -35,6 +35,8 @@ gem 'rails-ujs', '~> 0.1.0'
 gem "font-awesome-rails"
 
 gem 'simple_form'
+
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
