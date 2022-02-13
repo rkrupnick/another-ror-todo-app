@@ -3,7 +3,25 @@
 <h1>Tasks</h1>
 
 <div id="tasks">
-  <% @tasks.each do |task| %>
+  <% @to_do.each do |task| %>
+    <%= render task %>
+    <p>
+      <%= link_to "Show this task", task %>
+    </p>
+  <% end %>
+</div>
+
+<div id="tasks">
+  <% @doing.each do |task| %>
+    <%= render task %>
+    <p>
+      <%= link_to "Show this task", task %>
+    </p>
+  <% end %>
+</div>
+
+<div id="tasks">
+  <% @done.each do |task| %>
     <%= render task %>
     <p>
       <%= link_to "Show this task", task %>
