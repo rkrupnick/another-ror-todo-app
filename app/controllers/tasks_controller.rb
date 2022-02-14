@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[ show edit update destroy change ]
   before_action :authenticate_user!
 
   # GET /tasks or /tasks.json
@@ -57,6 +57,14 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def change
+   # @task = Task.find(params[:id])
+    @task.update(state: params[:state])
+    respond_to do |format|
+      format.html { redirect_to tasks_path, notice: "Task status successfully changed"}
     end
   end
 
