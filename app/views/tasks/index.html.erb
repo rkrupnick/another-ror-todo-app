@@ -8,9 +8,7 @@
     <p>
       <%= link_to "Show this task", task %>
     </p>
-    <p>
-      <%= link_to 'Mark as Doing', change_task_path(task, state: "doing"), method: :put %>
-    </p>
+    
   <% end %>
 </div>
 
@@ -20,12 +18,6 @@
     <p>
       <%= link_to "Show this task", task %>
     </p>
-      <p>
-      <%= link_to 'Mark as To do', change_task_path(task, state: "to_do"), method: :put %>
-    </p>
-      <p>
-      <%= link_to 'Mark as Done', change_task_path(task, state: "done"), method: :put %>
-    </p>
   <% end %>
 </div>
 
@@ -34,9 +26,6 @@
     <%= render task %>
     <p>
       <%= link_to "Show this task", task %>
-    </p>
-      <p>
-      <%= link_to 'Mark as Doing', change_task_path(task, state: "doing"), method: :put %>
     </p>
   <% end %>
 </div>

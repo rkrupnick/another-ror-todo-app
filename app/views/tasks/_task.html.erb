@@ -7,4 +7,16 @@
     <strong>State:</strong>
     <%= task.state %>
   </p>
+  <% if task.state == 'doing' %>
+    <p>
+      <%= link_to 'Mark as To Do', change_task_path(task, state: "to_do"), method: :put %>
+    </p>
+    <p>
+      <%= link_to 'Mark as Done', change_task_path(task, state: "done"), method: :put %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to 'Mark as Doing', change_task_path(task, state: "doing"), method: :put %>
+    </p>
+    <% end %>
 </div>
