@@ -7,9 +7,6 @@
   <div class="task-box">
   <% @to_do.each do |task| %>
     <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
     
   <% end %>
   </div>
@@ -20,9 +17,6 @@
    <div class="task-box">
   <% @doing.each do |task| %>
     <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
   <% end %>
   </div>
 </div>
@@ -32,9 +26,6 @@
  <div class="task-box">
   <% @done.each do |task| %>
     <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
   <% end %>
   </div>
 </div>
