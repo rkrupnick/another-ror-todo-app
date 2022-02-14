@@ -1,22 +1,26 @@
 <div id="<%= dom_id task %>">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    Created <%= time_ago_in_words(task.created_at) %> ago
+  </div>
+  <div class="panel-body">
   <p>
-    <strong>Content:</strong>
     <%= task.content %>
   </p>
-  <p>
-    <strong>State:</strong>
-    <%= task.state %>
-  </p>
+  </div>
+  <div class="panel-footer text-center">
   <% if task.state == 'doing' %>
-    <p>
-      <%= link_to 'Mark as To Do', change_task_path(task, state: "to_do"), method: :put %>
-    </p>
-    <p>
-      <%= link_to 'Mark as Done', change_task_path(task, state: "done"), method: :put %>
-    </p>
+      <%= link_to "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put %>
+  
+      <%= link_to  "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put %>
+    
+    <% elsif task.state == 'done' %>
+      <%= link_to  "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "doing"), method: :put %>
     <% else %>
     <p>
-      <%= link_to 'Mark as Doing', change_task_path(task, state: "doing"), method: :put %>
+      <%= link_to "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "doing"), method: :put %>
     </p>
     <% end %>
+    </div>
+</div>
 </div>
