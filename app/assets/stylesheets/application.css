@@ -14,3 +14,16 @@
   *= require font-awesome
  *= require_self
  */
+.tasks-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.task-type {
+    padding: 0 30px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.task-type h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
